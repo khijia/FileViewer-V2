@@ -16,6 +16,7 @@ namespace FileViewer.Model
             var logFilePath = $@"{path}\log.log";
             File.AppendAllText(logFilePath, DateTime.Now.ToString()+"=> "+ ex.Message + "\r\n");
             File.AppendAllText(logFilePath, DateTime.Now.ToString() + "=> " + ex.StackTrace + "\r\n");
+
         }
 
         public static void info(string str)

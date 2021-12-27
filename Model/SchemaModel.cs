@@ -107,6 +107,7 @@ namespace FileViewer.Model
 
         public static List<DataSetting> LoadDataSettings()
         {
+            if (!File.Exists(CONS.settingsFile)) return new List<DataSetting>();
             using (StreamReader r = new StreamReader(CONS.settingsFile))
             {
                 string json = r.ReadToEnd();
