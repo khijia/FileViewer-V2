@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="40405a1f-c315-4485-8494-e9e6fd225b14" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EISUploadWebService.wsdl" MetadataType="Wsdl" ID="a4d13811-c152-4260-97c3-cc2a8f1a0b09" SourceId="1" SourceUrl="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?wsdl=wsdl0" />
+    <MetadataFile FileName="EISUploadWebService.xsd" MetadataType="Schema" ID="62bf46eb-f4b1-4b58-8e0e-b8c074fb8f96" SourceId="1" SourceUrl="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?xsd=xsd0" />
+    <MetadataFile FileName="EISUploadWebService1.xsd" MetadataType="Schema" ID="bf6888b6-32ac-4463-b836-75bc55d548a4" SourceId="1" SourceUrl="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?xsd=xsd1" />
+    <MetadataFile FileName="EISUploadWebService2.xsd" MetadataType="Schema" ID="d49a9d31-15bd-4bb1-bd2a-6451d9bcab5d" SourceId="1" SourceUrl="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?xsd=xsd2" />
+    <MetadataFile FileName="EISUploadWebService3.xsd" MetadataType="Schema" ID="79c39216-9b40-477d-af5e-7590091f128a" SourceId="1" SourceUrl="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?xsd=xsd3" />
+    <MetadataFile FileName="EISUploadWebService1.wsdl" MetadataType="Wsdl" ID="53b624fa-c979-45c2-876a-eeb080babd17" SourceId="1" SourceUrl="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

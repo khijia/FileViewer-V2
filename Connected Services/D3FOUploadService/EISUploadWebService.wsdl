@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="eis" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="eis" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="eis/Imports">
+      <xsd:import schemaLocation="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?xsd=xsd2" namespace="eis" />
+      <xsd:import schemaLocation="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?xsd=xsd3" namespace="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" />
+      <xsd:import schemaLocation="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://eis-dev9d0eb9da65049102devaos.cloudax.dynamics.com/soap/services/EISUploadWebService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadDoc">
+    <wsdl:part name="parameters" element="tns:UploadDoc" />
+  </wsdl:message>
+  <wsdl:message name="UploadDoc_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocResponse">
+    <wsdl:part name="parameters" element="tns:UploadDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocResponse_Headers">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q2:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="EISUploadService_UploadDoc_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q3:Fault" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocV2">
+    <wsdl:part name="parameters" element="tns:UploadDocV2" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocV2_Headers">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q4:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocV2Response">
+    <wsdl:part name="parameters" element="tns:UploadDocV2Response" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocV2Response_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q5:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="EISUploadService_UploadDocV2_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q6:Fault" />
+  </wsdl:message>
+  <wsdl:portType name="EISUploadService">
+    <wsdl:operation name="UploadDoc">
+      <wsdl:input wsam:Action="eis/EISUploadService/UploadDoc" name="UploadDoc" message="tns:UploadDoc" />
+      <wsdl:output wsam:Action="eis/EISUploadService/UploadDocResponse" name="UploadDocResponse" message="tns:UploadDocResponse" />
+      <wsdl:fault wsam:Action="eis/EISUploadService/Fault" name="SoapServiceFaultFault" message="tns:EISUploadService_UploadDoc_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocV2">
+      <wsdl:input wsam:Action="eis/EISUploadService/UploadDocV2" name="UploadDocV2" message="tns:UploadDocV2" />
+      <wsdl:output wsam:Action="eis/EISUploadService/UploadDocV2Response" name="UploadDocV2Response" message="tns:UploadDocV2Response" />
+      <wsdl:fault wsam:Action="eis/EISUploadService/Fault" name="SoapServiceFaultFault" message="tns:EISUploadService_UploadDocV2_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

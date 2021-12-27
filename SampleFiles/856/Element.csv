@@ -1,0 +1,315 @@
+ExternalId,DocumentId,Segment ID,Name,Usage,Length,Start At,Description
+1,4,1,SOURCE,,20,4,
+2,4,1,STANDARD,,1,24,
+3,4,1,VERSION,,12,25,
+4,4,1,TYPEDOCUMENT,,6,37,
+5,4,1,MODE,,1,43,
+6,4,2,ID_ASN,M,30,18,Shipment Identification
+7,4,2,DATE_ASN,M,8,48,Date
+8,4,2,HEURE_ASN,M,8,56,Time
+9,4,2,TYPE_STRUCTURE,O,4,64,Hierarchical Structure Code
+10,4,2,TRANSACPURPOSECODE,O,2,68,Transaction Set Purpose Code
+11,4,3,NB_HL,O,6,18,Number of Line Items
+12,4,3,TOTAL_QTE_LIVREE,O,10,24,Hash Total
+13,4,4,ID_SHIPMENT,O,12,18,Hierarchical ID Number
+14,4,5,QTE_TOTALE_PACK,O,7,18,Lading Quantity
+15,4,5,POIDS_TOTAL_PACK,O,10,25,Weight
+16,4,5,UOFM_POIDS,O,2,35,Unit or Basis for Measurement Code
+17,4,5,CODEPAQUET,O,5,37,Packaging Code
+18,4,5,VOLUME_PO,O,10,42,Volume
+19,4,5,UOFM_VOLUME_PO,O,2,52,Unit or Basis for Measurement Code
+20,4,5,QUALIFIANT_POIDS,O,2,54,Weight Qualifier
+21,4,5,QUALIFIANT CODE COMMODITÉE,O,1,56,Commodity Code Qualifier
+22,4,5,CODE DE COMMODITÉE,O,5,57,Commodity Code
+23,4,5,DESCRIPTION,O,30,62,Lading Description
+24,4,6,TYPE_IDENTITE,O,2,18,Identification Code Qualifier
+25,4,6,IDENTITE,O,80,20,Identification Code
+26,4,6,ROUTING,O,35,100,Routing
+27,4,6,METHODE_TRANSPORT,O,2,135,Transportation Method/Type Code
+28,4,6,CODESEQUENCEROUTAGE,O,2,137,Routing Sequence Code
+29,4,6,CODESTATUTSHIPMENT,O,2,139,Shipment/Order Status Code
+30,4,6,SERVICELEVELCODE,O,2,141,Service Level Code
+31,4,6,HANDLINGCODE,O,3,143,Special Handling Code
+32,4,6,CODEDIRECTIONTRANSIT,O,2,146,Transit Direction Code
+33,4,6,TYPEHEURETRANSIT,O,2,148,Transit Time Direction Qualifier
+34,4,6,HEURETRANSIT,O,4,150,Transit Time
+35,4,6,IDLOCATION,O,30,154,Location Identifier
+36,4,7,CODEEQUIPEMENT,O,2,18,Equipment Description Code
+37,4,7,NUMEROEQUIPEMENT,O,10,20,Equipment Number
+38,4,7,INITIALEQUIPEMENT,O,4,30,Equipment Initial
+39,4,7,SEAL NUMBER,O,15,34,Seal Number
+40,4,8,TYPEREFERENCE,O,3,18,Reference Identification Qualifier
+41,4,8,REFERENCE,O,30,21,Reference Identification
+42,4,8,DESCRIPTION,O,80,51,Description
+43,4,9,TYPEDATE,O,3,18,Date/Time Qualifier
+44,4,9,DATE,O,8,21,Date
+45,4,9,HEURE,O,8,29,Time
+46,4,9,ZONE,O,2,37,Time Code
+47,4,10,METHODEPAIEMENT,O,2,18,Shipment Method of Payment
+48,4,10,FOBQUALLOC,O,2,20,Location Qualifier
+49,4,10,DESCRIPTION,O,80,22,Description
+50,4,10,TYPECODETERMETRANSPORT,O,2,102,Transportation Terms Qualifier Code
+51,4,10,CODETERMETRANSPORT,O,3,104,Transportation Terms Code
+52,4,10,FOBQUALLOC2,O,2,107,Location Qualifier
+53,4,10,DESCRIPTION2,O,80,109,Description
+54,4,11,TYPESAC,O,1,18,Allowance or Charge Indicator
+55,4,11,CODESAC,O,4,19,"Service, Promotion, Allowance, or Charge Code"
+56,4,11,TAUX,O,9,23,Rate
+57,4,11,METHODEMAN,O,2,32,Allowance or Charge Method of Handling Code
+58,4,11,MONTANTSAC,O,15,34,Amount
+59,4,12,CONTACT_FONC_CODE,O,2,18,Contact Function Code
+60,4,12,NOM_CONTACT,O,60,20,Name
+61,4,13,NO_COM_QUAL,O,2,18,Communication Number Qualifier
+62,4,13,NO_COMMUNICATION,O,60,20,Communication Number
+63,4,14,TYPENOM,O,3,18,Entity Identifier Code
+64,4,14,NOM,O,60,21,Name
+65,4,14,TYPECODE,O,2,81,Identification Code Qualifier
+66,4,14,CODEID,O,80,83,Identification Code
+67,4,14,TYPESHIPTO,O,3,163,Entity Identifier Code
+68,4,15,NOM_SUPP,O,60,18,Name
+69,4,16,ADRESSE,O,55,18,Address Information
+70,4,17,VILLE,O,30,18,City Name
+71,4,17,PROVINCE,O,2,48,State or Province Code
+72,4,17,CODE_POSTAL,O,15,50,Postal Code
+73,4,17,CODE_PAYS,O,3,65,Country Code
+74,4,17,DESCRIPTION_PAYS,O,25,68,Location Identifier
+75,4,18,TYPEREFERENCE,O,3,18,Reference Identification Qualifier
+76,4,18,REFERENCE,O,30,21,Reference Identification
+77,4,18,DESCRIPTION,O,80,51,Description
+78,4,19,CONTACT_FONC_CODE,O,2,18,Contact Function Code
+79,4,19,NOM_CONTACT,O,60,20,Name
+80,4,20,NO_COM_QUAL,O,2,18,Communication Number Qualifier
+81,4,20,NO_COMMUNICATION,O,60,20,Communication Number
+82,4,21,ID_ORDER,O,12,18,Hierarchical ID Number
+83,4,21,ID_PARENT_ORDER,O,12,30,Hierarchical Parent ID Number
+84,4,22,TYPECODEMAGASIN,O,3,18,
+85,4,22,MAGASIN,O,60,21,
+86,4,22,NUMEROPO,O,22,81,Purchase Order Number
+87,4,22,DATEPO,O,8,103,Date
+88,4,22,NUMEROVERSION,O,30,111,Release Number
+89,4,22,VENDORNUMEROPO,O,20,141,Assigned Identification
+90,4,22,CODETYPEPO,O,2,161,Purchase Order Type Code
+91,4,22,MONTANTTOTALFACTURE,O,15,163,Amount
+92,4,22,MONTANTSUJETRABAIS,O,10,178,Amount
+93,4,22,MONTANTRABAIS,O,10,188,Amount
+94,4,22,MONTANTTERMSRABAIS,O,10,198,Amount
+95,4,22,QUANTITELIVREE,O,10,208,Number of Units Shipped
+96,4,22,UOM_QUANTITELIVREE,O,2,218,Unit or Basis for Measurement Code
+97,4,23,TYPEREFERENCE,O,3,18,Reference Identification Qualifier
+98,4,23,REFERENCE,O,30,21,Reference Identification
+99,4,23,DESCRIPTION,O,80,51,Description
+100,4,24,TYPEDATE,O,3,18,Date/Time Qualifier
+101,4,24,DATE,O,8,21,Date
+102,4,24,HEURE,O,8,29,Time
+103,4,25,QTETOTALPAQUET,O,7,18,Lading Quantity
+104,4,25,POIDSPO,O,10,25,Weight
+105,4,25,UOFM_POIDS,O,2,35,Unit or Basis for Measurement Code
+106,4,25,CODEPAQUET,O,5,37,Packaging Code
+107,4,25,VOLUME_PO,O,10,42,Volume
+108,4,25,UOFM_VOLUME_PO,O,2,52,Unit or Basis for Measurement Code
+109,4,25,QUALIFIANT_POIDS,O,2,54,Weight Qualifier
+110,4,25,QUALIFIANT CODE COMMODITEE,O,1,56,Commodity Code Qualifier
+111,4,25,CODECOMMODITEE,O,5,57,Commodity Code
+112,4,25,DESCRIPTION,O,30,62,Lading Description
+113,4,26,TYPE_IDENTITE,O,2,18,Identification Code Qualifier
+114,4,26,IDENTITE,O,80,20,Identification Code
+115,4,26,ROUTING,O,35,100,Routing
+116,4,26,METHODE_TRANSPORT,O,2,135,Transportation Method/Type Code
+117,4,26,CODESEQUENCEROUTAGE,O,2,137,Routing Sequence Code
+118,4,26,CODESTATUTSHIPMENT,O,2,139,Shipment/Order Status Code
+119,4,27,SPACES,O,2,18,Spaces
+120,4,27,TYPEALLOCATIONCHARGE,O,1,20,Allowance or Charge Indicator
+121,4,27,CODEALLOCATIONCHARGE,O,4,21,"Service, Promotion, Allowance, or Charge Code"
+122,4,27,MONTANTCHARGEALLOCATION,O,15,25,Amount
+123,4,27,POURCENTALLOCATIONCHARGE,O,6,40,Percent
+124,4,27,TAUXALLOCATIONCHARGE,O,9,46,Rate
+125,4,27,QUANTITETAUX,O,15,55,Quantity
+126,4,27,UNITEMESUREQTETAUX,O,2,70,Unit or Basis for Measurement Code
+127,4,27,METHODEMAN,O,2,72,Allowance or Charge Method of Handling Code
+128,4,27,DESCRIPTIONALLOCATIONCHARGE,O,80,74,Description
+129,4,27,QUALIFIERPOURCENTAGE,O,1,154,Allowance/Charge Percent Qualifier
+130,4,27,CODEREFERENCE,O,30,155,Reference Identification
+131,4,27,CODEOPTION,O,20,185,Option Number
+132,4,27,NUMEROALLOCATIONCHARGE,O,16,205,
+133,4,27,NUMEROEXCEPTION,O,16,221,
+134,4,27,POURCENTBASEDOLLAR,O,9,237,
+135,4,28,SPACES,O,2,18,Spaces
+136,4,28,TYPETAXE,O,2,20,Tax Type Code
+137,4,28,MONTANTTAXE,O,18,22,Monetary Amount
+138,4,28,POURCENTAGETAXE,O,10,40,Percent
+139,4,28,CODEJURITAXE,O,10,50,Tax Jurisdiction Code
+140,4,29,TYPENOM,O,3,18,Entity Identifier Code
+141,4,29,NOM,O,60,21,Name
+142,4,29,TYPECODE,O,2,81,Identification Code Qualifier
+143,4,29,CODEID,O,80,83,Identification Code
+144,4,30,ADRESSE,O,55,18,Address Information
+145,4,31,VILLE,O,30,18,City Name
+146,4,31,PROVINCE,O,2,48,State or Province Code
+147,4,31,CODE_POSTAL,O,15,50,Postal Code
+148,4,31,CODE_PAYS,O,3,65,Country Code
+149,4,31,DESCRIPTION_PAYS,O,0,68,Location Identifier
+150,4,32,ID_PALETTE,O,12,18,Hierarchical ID Number
+151,4,32,ID_PARENT_PALETTE,O,12,30,Hierarchical Parent ID Number
+152,4,33,QTETOTALEPALETTE,O,7,18,QteTotalePalette
+153,4,33,POIDSTOTALPALETTE,O,10,25,PoidsTotalPalette
+154,4,33,UOFMPOIDSPALETTE,O,2,35,UOFMPoidsPalette
+155,4,33,CODEPALETTE,O,5,37,CodePalette
+156,4,33,VOLUME_PALETTE,O,10,42,Volume_Palette
+157,4,33,UOFM_VOLUME_PALETTE,O,2,52,UOFM_Volume_Palette
+158,4,33,QUALIFIANTPOIDSPALETTE,O,2,54,QualifiantPoidsPalette
+159,4,33,QUALIFIANTCODECOMMODITEE,O,1,56,QualifiantCodeCommoditee
+160,4,33,CODEDECOMMODITEE,O,5,57,CodedeCommoditee
+161,4,33,DESCRIPTION,O,30,63,Description
+162,4,34,ID_ASN_PALETTE,O,2,18,Marks and Numbers Qualifier
+163,4,34,CODE_PALETTE,O,48,20,Marks and Numbers
+164,4,35,CODETYPEPALETTE,O,2,18,Pallet Type Code
+165,4,35,PALETTEPACK,O,6,20,Pack
+166,4,35,PALETTETIERS,O,3,26,Pallet Tiers
+167,4,35,PALETTEBLOCKS,O,3,29,Pallet Blocks
+168,4,35,POIDSPALETTE,O,8,32,Unit Weight
+169,4,35,UOFMPOIDS,O,2,40,Unit or Basis for Measurement Code
+170,4,35,CODEECHANGEPALETTE,O,1,42,Pallet Exchange Code
+171,4,35,LONGUEUR,O,8,43,Length
+172,4,35,LARGEUR,O,8,51,Width
+173,4,35,HAUTEUR,O,8,59,Height
+174,4,35,UOFM_DIMENSION,O,2,67,Unit or Basis for Measurement Code
+175,4,35,POIDSBRUTPARPAQUET,O,9,69,Gross Weight per Pack
+176,4,35,UOFM_POIDSPARPAQUET,O,2,78,Unit or Basis for Measurement Code
+177,4,36,ID_PAQUET,O,12,18,Hierarchical ID Number
+178,4,36,ID_PARENT_PAQUET,O,12,30,Hierarchical Parent ID Number
+179,4,37,ID_ASN_PAQUET,O,2,18,Marks and Numbers Qualifier
+180,4,37,CODE_PAQUET,O,48,20,Marks and Numbers
+181,4,38,CODETYPEPAQUET,O,2,18,Pallet Type Code
+182,4,38,PAQUETPACK,O,6,20,Pack
+183,4,38,PAQUETTIERS,O,3,26,Pallet Tiers
+184,4,38,PAQUETBLOCKS,O,3,29,Pallet Blocks
+185,4,38,POIDSPAQUET,O,8,32,Unit Weight
+186,4,38,UOFMPOIDS,O,2,40,Unit or Basis for Measurement Code
+187,4,39,QTETOTALEPAQUET,O,7,18,Lading Quantity
+188,4,39,POIDSTOTALPAQUET,O,10,25,Weight
+189,4,39,UOFMPOIDSPAQUET,O,2,35,Unit or Basis for Measurement Code
+190,4,39,CODEPAQUET,O,5,37,Packaging Code
+191,4,39,VOLUME_PAQUET,O,10,42,Volume
+192,4,39,UOFM_VOLUME_PAQUET,O,2,52,Unit or Basis for Measurement Code
+193,4,39,QUALIFIANTPOIDSPAQUET,O,2,54,Weight Qualifier
+194,4,39,QUALIFIANTCODECOMMODITEE,O,1,56,Commodity Code Qualifier
+195,4,39,CODEDECOMMODITEE,O,5,57,Commodity Code
+196,4,39,DESCRIPTION,O,30,62,Lading Description
+197,4,40,TYPE_IDENTITE,O,2,18,Identification Code Qualifier
+198,4,40,IDENTITE,O,80,20,Identification Code
+199,4,40,ROUTING,O,35,100,Routing
+200,4,40,METHODE_TRANSPORT,O,2,135,Transportation Method/Type Code
+201,4,40,CODESEQUENCEROUTAGE,O,2,137,Routing Sequence Code
+202,4,40,CODESTATUTSHIPMENT,O,2,139,Shipment/Order Status Code
+203,4,40,IDENTIFICATIONLOCATION,O,30,141,Location Identifier
+204,4,41,GROSSWEIGHT,O,9,18,Gross Weight per Pack
+205,4,41,UOFM_WEIGHT,O,2,27,Unit or Basis for Measurement Code
+206,4,41,LENGTH,O,8,29,Length
+207,4,41,WIDTH,O,8,37,Width
+208,4,41,HEIGHT,O,8,45,Height
+209,4,41,UOFM_DIMENSION,O,2,53,Unit or Basis for Measurement Code
+210,4,41,PACK,O,0,55,Pack Qty
+211,4,42,TYPEREFERENCE,O,3,18,Reference Identification Qualifier
+212,4,42,REFERENCE,O,30,21,Reference Identification
+213,4,42,DESCRIPTION,O,80,51,Description
+214,4,43,TYPEDATE,O,3,18,Date/Time Qualifier
+215,4,43,DATE,O,8,21,Date
+216,4,44,TYPESAC,O,1,18,Allowance or Charge Indicator
+217,4,44,CODESAC,O,4,19,"Service, Promotion, Allowance, or Charge Code"
+218,4,44,TAUX,O,9,23,Rate
+219,4,44,METHODEMAN,O,2,32,Allowance or Charge Method of Handling Code
+220,4,44,MONTANTSAC,O,15,34,Amount
+221,4,45,TYPE_CODE_PRODUIT,O,2,18,Product/Service ID Qualifier
+222,4,45,CODE_PRODUIT,O,48,20,Product/Service ID
+223,4,46,UNITE_LIVREE,O,10,18,Number of Units Shipped
+224,4,46,UOFM,O,2,28,Unit or Basis for Measurement Code
+225,4,47,TYPENOM,O,3,18,Entity Identifier Code
+226,4,47,NOM,O,60,21,Name
+227,4,47,TYPECODE,O,2,81,Identification Code Qualifier
+228,4,47,CODEID,O,80,83,Identification Code
+229,4,48,ID_ITEM,O,12,18,Hierarchical ID Number
+230,4,48,ID_PARENT_ITEM,O,12,30,Hierarchical Parent ID Number
+231,4,49,TYPE_CODE_PRODUIT,O,2,18,Product/Service ID Qualifier
+232,4,49,CODE_PRODUIT,O,48,20,Product/Service ID
+233,4,50,UNITE_LIVREE,O,10,18,Number of Units Shipped
+234,4,50,UOFM,O,2,28,Unit or Basis for Measurement Code
+235,4,50,UNITE_COMMANDEE,O,10,30,Quantity Ordered
+236,4,50,UOFM2,O,2,40,Unit or Basis for Measurement Code
+237,4,50,NUMERO_LIGNE,O,6,42,Assigned Identification
+238,4,50,UNITÉ_LIVREE_A_DATE,O,9,48,Quantity Shipped to Date
+239,4,50,CODESTATUSITEM,O,2,57,Line Item Status Code
+240,4,50,PRIXUNITAIRE,O,15,59,Unit Price
+241,4,50,MONTANTCHGLIVITEM,O,15,74,Amount
+242,4,50,PRIXREVENTE,O,15,89,Resale Price
+243,4,51,PACK,O,6,18,Pack
+244,4,51,FORMAT,O,8,24,Size
+245,4,51,UOFM_FORMAT,O,2,32,Unit or Basis for Measurement Code
+246,4,51,INNERPACK,O,6,34,Inner Pack
+247,4,51,CODEPAQUET,O,5,40,Packaging Code
+248,4,51,POIDSBRUT,O,9,45,Gross Weight per Pack
+249,4,51,UOM_POIDSBRUT,O,2,54,Unit or Basis for Measurement Code
+250,4,51,VOLUMEBRUT,O,9,56,Gross Volume per Pack
+251,4,51,UOM_VOLUMEBRUT,O,2,65,Unit or Basis for Measurement Code
+252,4,51,LONGEUR,O,8,67,Length
+253,4,51,LARGEUR,O,8,75,Width
+254,4,51,HAUTEUR,O,8,83,Height
+255,4,51,UOM_DIMENSIONS,O,2,91,Unit or Basis for Measurement Code
+256,4,52,CODEPRIX,O,3,18,Hash Total
+257,4,52,PRIX,O,17,21,Weight
+258,4,52,QUANTITEPRIX,O,15,38,Unit or Basis for Measurement Code
+259,4,52,UOFM,O,2,53,Volume
+260,4,52,TYPEMULTIPLICATEUR,O,3,55,Unit or Basis for Measurement Code
+261,4,52,MULTIPLICATEUR,O,10,58,Description
+262,4,53,DESCRIPTION,O,80,18,Description
+263,4,53,CODECARACTERISTIQUE,O,3,98,Product/Process Characteristic Code
+264,4,54,CODEMANIPULATIONSPECIALE,O,3,18,Special Handling Code
+265,4,54,TYPECODEMATERIELDANGEREUX,O,1,21,Hazardous Material Code Qualifier
+266,4,54,CODECLASSEMATERIELDANGEREUX,O,4,22,Hazardous Material Class Code
+267,4,55,QTE_TOTALE_PAQUET,O,7,18,Lading Quantity
+268,4,55,POIDS_TOTAL_PAQUET,O,10,25,Weight
+269,4,55,UOFM_POIDS,O,2,35,Unit or Basis for Measurement Code
+270,4,55,CODEPAQUET,O,5,37,Packaging Code
+271,4,55,VOLUME_ITM,O,10,42,Volume
+272,4,55,UOFM_VOLUME,O,2,52,Unit or Basis for Measurement Code
+273,4,55,QUALIFIANT_POIDS,O,2,54,Weight Qualifier
+274,4,55,QUALIFIANT CODE COMMODITÉE,O,1,56,Commodity Code Qualifier
+275,4,55,CODE DE COMMODITÉE,O,5,57,Commodity Code
+276,4,55,DESCRIPTION,O,30,62,Lading Description
+277,4,56,TYPE_IDENTITE,O,2,18,Identification Code Qualifier
+278,4,56,IDENTITE,O,80,20,Identification Code
+279,4,56,ROUTING,O,35,100,Routing
+280,4,56,METHODE_TRANSPORT,O,2,135,Transportation Method/Type Code
+281,4,56,CODESEQUENCEROUTAGE,O,2,137,Routing Sequence Code
+282,4,56,CODESTATUTSHIPMENT,O,2,139,Shipment/Order Status Code
+283,4,57,TYPEREFERENCE,O,3,18,Reference Identification Qualifier
+284,4,57,REFERENCE,O,30,21,Reference Identification
+285,4,57,DESCRIPTION,O,80,51,Description
+286,4,58,ID_ASN_MAN,O,2,18,Marks and Numbers Qualifier
+287,4,58,CODE_PAQUET_ITEM,O,48,20,Marks and Numbers
+288,4,59,TYPEDATE,O,3,18,Date/Time Qualifier
+289,4,59,DATE,O,8,21,Date
+290,4,59,HEURE,O,8,29,Time
+291,4,59,ZONE,O,2,37,Time Code
+292,4,60,CODECONDITION,O,3,18,Condition Indicator
+293,4,60,CODEREPONSE,O,1,21,Yes/No Condition or Response Code
+294,4,61,QTE_TOTALE,O,15,18,Quantity
+295,4,61,UOFM,O,2,33,Composite Unit of Measure
+296,4,61,PRIX,O,17,35,Unit Price
+297,4,61,NUMEROLIGNESOUSITEM,O,6,52,Assigned Identification
+298,4,61,CODERELATION,O,1,58,Relationship Code
+299,4,62,TYPECODEPRODUIT,O,2,18,Product/Service ID
+300,4,62,CODEPRODUIT,O,48,20,Product/Service ID Qualifier
+301,4,63,NBROFLOADS,O,5,18,Number of Loads
+302,4,63,NBRUNITSSHIPPED,O,10,23,Number of Units Shipped
+303,4,64,TYPEREFERENCE,O,3,18,Reference Identification Qualifier
+304,4,64,REFERENCE,O,30,21,Reference Identification
+305,4,65,TYPENOM,O,3,18,Entity Identifier Code
+306,4,65,NOM,O,60,21,Name
+307,4,65,TYPECODE,O,2,81,Identification Code Qualifier
+308,4,65,CODEID,O,80,83,Identification Code
+309,4,66,ADRESSE,O,55,18,Address Information
+310,4,67,VILLE,O,30,18,City Name
+311,4,67,PROVINCE,O,2,48,State or Province Code
+312,4,67,CODE_POSTAL,O,15,50,Postal Code
+313,4,67,CODE_PAYS,O,3,65,Country Code
+314,4,67,DESCRIPTION_PAYS,O,25,68,Location Identifier

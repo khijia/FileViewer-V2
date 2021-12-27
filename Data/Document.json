@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "DocType": 850,
+    "Description": "Purchase Order"
+  },
+  {
+    "Id": 2,
+    "DocType": 820,
+    "Description": "Customer Remit Advice"
+  },
+  {
+    "Id": 3,
+    "DocType": 810,
+    "Description": "Invoice"
+  },
+  {
+    "Id": 4,
+    "DocType": 856,
+    "Description": "Advance Shipment Notice"
+  },
+  {
+    "Id": 5,
+    "DocType": 846,
+    "Description": "Inventory Inquiry/Advice"
+  },
+  {
+    "Id": 6,
+    "DocType": 855,
+    "Description": "Purchase Order Acknowledgement"
+  },
+  {
+    "Id": 7,
+    "DocType": 812,
+    "Description": "Credit/Debit Adjustment"
+  },
+  {
+    "Id": 8,
+    "DocType": 940,
+    "Description": "Warehouse Shipping Order"
+  },
+  {
+    "Id": 9,
+    "DocType": 945,
+    "Description": "Warehouse Shipping Advice"
+  }
+]

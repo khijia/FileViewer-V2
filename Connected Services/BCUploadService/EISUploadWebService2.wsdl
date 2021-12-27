@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/EISUploadWebService2" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/EISUploadWebService2" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/EISUploadWebService2" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="UploadDoc">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="diWS_ID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="l" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UploadDoc_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="UploadDoc">
+    <part name="parameters" element="tns:UploadDoc" />
+  </message>
+  <message name="UploadDoc_Result">
+    <part name="parameters" element="tns:UploadDoc_Result" />
+  </message>
+  <portType name="EISUploadWebService2_Port">
+    <operation name="UploadDoc">
+      <input name="UploadDoc" message="tns:UploadDoc" />
+      <output name="UploadDoc_Result" message="tns:UploadDoc_Result" />
+    </operation>
+  </portType>
+  <binding name="EISUploadWebService2_Binding" type="tns:EISUploadWebService2_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="UploadDoc">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/EISUploadWebService2:UploadDoc" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UploadDoc">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UploadDoc_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EISUploadWebService2">
+    <port name="EISUploadWebService2_Port" binding="tns:EISUploadWebService2_Binding">
+      <address location="https://api.businesscentral.dynamics.com/v2.0/ef9c55ee-efd9-4f32-8470-7ed3afd212a7/Sandbox/WS/US/Codeunit/EISUploadWebService2?=wsdl&amp;tenant=msft1a6720t94566514&amp;aid=FIN" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

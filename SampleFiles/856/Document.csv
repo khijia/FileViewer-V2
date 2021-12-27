@@ -1,0 +1,5 @@
+externalid,EDIDocumentType,Description
+1,850,Order
+2,820,Customer Remittance Advice
+3,810,Invoice
+4,856,Advanced Shipping Notice
