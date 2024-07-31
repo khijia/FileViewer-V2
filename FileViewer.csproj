@@ -137,6 +137,12 @@
     <Compile Include="Forms\FileViewer.Designer.cs">
       <DependentUpon>FileViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LineNumberTextBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LineNumberTextBoxForm.Designer.cs">
+      <DependentUpon>LineNumberTextBoxForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Segment.cs" />
+    <Compile Include="Utility\LineNumberTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Utility\OAuthHelper.cs" />
     <Compile Include="Utility\SoapHelper.cs" />
     <EmbeddedResource Include="Forms\About.resx">
@@ -195,6 +204,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\LineNumberTextBox.resx">
+      <DependentUpon>LineNumberTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\BCUploadService\EISUploadWebService2.wsdl" />
     <None Include="Connected Services\BCUploadService\FileViewer.BCUploadService.UploadDoc_Result.datasource">

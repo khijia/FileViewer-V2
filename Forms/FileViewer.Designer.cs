@@ -1,4 +1,6 @@
 ﻿
+using FileViewer.Utility;
+
 namespace FileViewer
 {
     partial class FileViewer
@@ -6,7 +8,7 @@ namespace FileViewer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components = null;       
 
         /// <summary>
         /// Clean up any resources being used.
@@ -52,6 +54,7 @@ namespace FileViewer
             this.panel1 = new System.Windows.Forms.Panel();
             this.ctrlTabFileViewer = new System.Windows.Forms.CustomTabControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();           
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +79,8 @@ namespace FileViewer
             this.btnInsert,
             this.btnDelete,
             this.btnViewAsText,
-            this.btnViewAsGrid});
+            this.btnViewAsGrid,
+            this.toolStripButton1});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
@@ -253,6 +257,13 @@ namespace FileViewer
             this.backgroundWorker1.WorkerReportsProgress = true;
             this.backgroundWorker1.WorkerSupportsCancellation = true;
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
             // FileViewer
             // 
             resources.ApplyResources(this, "$this");
@@ -299,5 +310,6 @@ namespace FileViewer
         private System.Windows.Forms.ToolStripButton btnExp2BC;
         private System.Windows.Forms.ToolStripButton btnViewAsText;
         private System.Windows.Forms.ToolStripButton btnViewAsGrid;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

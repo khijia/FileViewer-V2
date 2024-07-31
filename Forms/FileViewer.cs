@@ -1,5 +1,6 @@
 ﻿using FileViewer.Forms;
 using FileViewer.Model;
+using FileViewer.Utility;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace FileViewer
             openFileDialog = new OpenFileDialog()
             {
                 FileName = "Select a Alligacom file",
-                Filter = "Text files (*.txt)|*.txt",
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*", 
                 Title = "Open Alligacom file"
             };
             _initMenu();
@@ -846,6 +847,19 @@ namespace FileViewer
             txtContent.ScrollBars = ScrollBars.Both;
             return txtContent;
         }
+        private LineNumberTextBox _initTextBoxCustom(string name)
+        {
+            var txtContent = new LineNumberTextBox
+            {
+                ForeColor = System.Drawing.SystemColors.ControlText,
+                Location = new System.Drawing.Point(206, 51),
+                Name = name,
+                Anchor = AnchorStyles.Top,
+                Dock = DockStyle.Fill,
+                TabIndex = 22
+            };                        
+            return txtContent;
+        }
 
         private void Grid_MouseClick(object sender, MouseEventArgs e)
         {
@@ -1141,6 +1155,42 @@ namespace FileViewer
             return content;
         }
 
+        //private void btnViewAsText_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        var tabCtrl = this.ctrlTabFileViewer.SelectedTab;
+        //        if (tabCtrl == null) return;
+        //        var controls = tabCtrl.Controls;
+        //        var content = GetContent2Export(tabCtrl);
+        //        TextBox currTextBox = null;
+        //        foreach (Control control in controls)
+        //        {
+        //            if (control.GetType() == typeof(DataGridView))
+        //            {
+        //                control.Visible = false;
+        //                continue;
+        //            }
+        //            if (control.GetType() == typeof(TextBox))
+        //            {
+        //                currTextBox = (TextBox)control;
+        //                currTextBox.Visible = true;
+        //            }
+        //        }
+        //        if (currTextBox == null)
+        //        {
+        //            currTextBox = _initTextBox(Guid.NewGuid().ToString());
+        //            tabCtrl.Controls.Add(currTextBox);
+        //        }
+        //        currTextBox.Text = content;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.info(ex);
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
+
         private void btnViewAsText_Click(object sender, EventArgs e)
         {
             try
@@ -1149,23 +1199,28 @@ namespace FileViewer
                 if (tabCtrl == null) return;
                 var controls = tabCtrl.Controls;
                 var content = GetContent2Export(tabCtrl);
-                TextBox currTextBox = null;
+
+                //TextBox currTextBox = null;
+                LineNumberTextBox currTextBox = null;
                 foreach (Control control in controls)
                 {
-                    if (control.GetType() == typeof(DataGridView))
+                    var controlType = control.GetType();
+                    if (controlType == typeof(DataGridView))
                     {
                         control.Visible = false;
                         continue;
                     }
-                    if (control.GetType() == typeof(TextBox))
+                    else if (controlType == typeof(LineNumberTextBox))
                     {
-                        currTextBox = (TextBox)control;
+                        currTextBox = (LineNumberTextBox)control;
                         currTextBox.Visible = true;
+                        currTextBox.TextChangedEvent += LineNumberTextBox_TextChanged;
+                        currTextBox.MouseDownEvent += LineNumberTextBox_MouseMove;
                     }
                 }
                 if (currTextBox == null)
-                {
-                    currTextBox = _initTextBox(Guid.NewGuid().ToString());
+                {                   
+                    currTextBox = _initTextBoxCustom(Guid.NewGuid().ToString());
                     tabCtrl.Controls.Add(currTextBox);
                 }
                 currTextBox.Text = content;
@@ -1190,11 +1245,11 @@ namespace FileViewer
                 DataGridView grid = null;
                 foreach (Control control in controls)
                 {
-                    if (control.GetType() == typeof(TextBox))
+                    if (control.GetType() == typeof(LineNumberTextBox))
                     {
                         control.Visible = false;
                         txt = control;
-                        var currTextBox = (TextBox)control;
+                        var currTextBox = (LineNumberTextBox)control;
                         content = currTextBox.Text;
                         continue;
                     }
@@ -1226,5 +1281,41 @@ namespace FileViewer
             }
         }
 
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            LineNumberTextBoxForm frm = new LineNumberTextBoxForm();
+            frm.ShowDialog();
+        }
+
+        private void LineNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+            UpdateStatus((LineNumberTextBox)sender);
+        }
+
+        private void LineNumberTextBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            UpdateStatus((LineNumberTextBox)sender);
+        }
+
+        private void LineNumberTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            UpdateStatus((LineNumberTextBox)sender);
+        }
+
+        private void LineNumberTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            UpdateStatus((LineNumberTextBox)sender);
+        }
+
+        private void UpdateStatus(LineNumberTextBox lineNumberTextBox)
+        {
+            int index = lineNumberTextBox.SelectionStart;
+            int line = lineNumberTextBox.GetLineFromCharIndex(index);
+            int column = index - lineNumberTextBox.GetFirstCharIndexFromLine(line);
+            //toolStripStatusLabel1.Text = $"Ln {line + 1}, Col {column + 1}";
+
+            int wordCount = lineNumberTextBox.Text.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            //toolStripStatusLabel2.Text = $"Word Count: {wordCount}";
+        }
     }
 }
