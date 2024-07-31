@@ -856,8 +856,14 @@ namespace FileViewer
                 Name = name,
                 Anchor = AnchorStyles.Top,
                 Dock = DockStyle.Fill,
-                TabIndex = 22
-            };                        
+                TabIndex = 22                
+
+            };
+            txtContent.TextChangedEvent += LineNumberTextBox_TextChanged;
+            txtContent.MouseDownEvent += LineNumberTextBox_MouseMove;
+            txtContent.MouseClick += LineNumberTextBox_MouseClick;
+            txtContent.KeyDown+= LineNumberTextBox_KeyDown;
+            txtContent.KeyUp += LineNumberTextBox_KeyUp;
             return txtContent;
         }
 
@@ -1153,43 +1159,7 @@ namespace FileViewer
                 }
             }
             return content;
-        }
-
-        //private void btnViewAsText_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        var tabCtrl = this.ctrlTabFileViewer.SelectedTab;
-        //        if (tabCtrl == null) return;
-        //        var controls = tabCtrl.Controls;
-        //        var content = GetContent2Export(tabCtrl);
-        //        TextBox currTextBox = null;
-        //        foreach (Control control in controls)
-        //        {
-        //            if (control.GetType() == typeof(DataGridView))
-        //            {
-        //                control.Visible = false;
-        //                continue;
-        //            }
-        //            if (control.GetType() == typeof(TextBox))
-        //            {
-        //                currTextBox = (TextBox)control;
-        //                currTextBox.Visible = true;
-        //            }
-        //        }
-        //        if (currTextBox == null)
-        //        {
-        //            currTextBox = _initTextBox(Guid.NewGuid().ToString());
-        //            tabCtrl.Controls.Add(currTextBox);
-        //        }
-        //        currTextBox.Text = content;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        log.info(ex);
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
+        }        
 
         private void btnViewAsText_Click(object sender, EventArgs e)
         {
@@ -1216,6 +1186,7 @@ namespace FileViewer
                         currTextBox.Visible = true;
                         currTextBox.TextChangedEvent += LineNumberTextBox_TextChanged;
                         currTextBox.MouseDownEvent += LineNumberTextBox_MouseMove;
+                        currTextBox.MouseClick += LineNumberTextBox_MouseClick;
                     }
                 }
                 if (currTextBox == null)
@@ -1296,6 +1267,10 @@ namespace FileViewer
         {
             UpdateStatus((LineNumberTextBox)sender);
         }
+        private void LineNumberTextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            UpdateStatus((LineNumberTextBox)sender);
+        }
 
         private void LineNumberTextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1312,10 +1287,10 @@ namespace FileViewer
             int index = lineNumberTextBox.SelectionStart;
             int line = lineNumberTextBox.GetLineFromCharIndex(index);
             int column = index - lineNumberTextBox.GetFirstCharIndexFromLine(line);
-            //toolStripStatusLabel1.Text = $"Ln {line + 1}, Col {column + 1}";
+            lineNumberTextBox.toolStripStatusLabel1.Text = $"Ln {line + 1}, Col {column + 1}";
 
             int wordCount = lineNumberTextBox.Text.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
-            //toolStripStatusLabel2.Text = $"Word Count: {wordCount}";
+            lineNumberTextBox.toolStripStatusLabel2.Text = $"Word Count: {wordCount}";
         }
     }
 }

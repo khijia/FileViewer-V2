@@ -10,10 +10,10 @@ namespace FileViewer.Utility
         private StatusStrip statusStrip1;
         private Panel _lineNumberPanel;
 
-        private StatusStrip statusStrip;
-        private ToolStripStatusLabel toolStripStatusLabel1;
-        private ToolStripStatusLabel toolStripStatusLabel2;
-        private ToolStripStatusLabel toolStripStatusLabel3;
+       public StatusStrip statusStrip;
+       public ToolStripStatusLabel toolStripStatusLabel1;
+       public ToolStripStatusLabel toolStripStatusLabel2;
+        public ToolStripStatusLabel toolStripStatusLabel3;
         public event EventHandler TextChangedEvent;
         public event MouseEventHandler MouseDownEvent;
 
