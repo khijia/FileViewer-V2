@@ -8,7 +8,7 @@ namespace FileViewer.Model
 {
     public class Parser
     {
-        private (int, int) GetDocumentId(string content, List<Document> documents, List<Segment> segments, List<Element> elements)
+        private (int, string) GetDocumentId(string content, List<Document> documents, List<Segment> segments, List<Element> elements)
         {
             if (content == null || content == string.Empty || content.Substring(0, 3) != "SYS")
             {
@@ -34,7 +34,7 @@ namespace FileViewer.Model
                     return (doc.Id, doc.DocType);
                 }
             }
-            return (-1, -1);
+            return (-1, "-1");
         }
 
         public (List<SegmentContent>, int) ParseContent(string content)
@@ -146,7 +146,7 @@ namespace FileViewer.Model
                         len = lineContent.Length - startAt;
                     }
                     if (len > 0)
-                        elementValue = lineContent.Substring(startAt, len).Trim();
+                        elementValue = lineContent.Substring(startAt, len);//.Trim();
                     //insert content row
                     elementContents.Add(new ElementContent
                     {

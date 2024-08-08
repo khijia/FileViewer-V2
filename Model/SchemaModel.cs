@@ -152,7 +152,7 @@ namespace FileViewer.Model
     public class DataDocument
     {
         public int Id { get; set; }
-        public int DocType { get; set; }
+        public string DocType { get; set; }
         public string Description { get; set; }
     }
 

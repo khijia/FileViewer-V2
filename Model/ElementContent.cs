@@ -12,7 +12,7 @@ namespace FileViewer.Model
         public int LineNum { get; set; }
         public int ParentId { get; set; }
         public int DocumentId { get; set; }
-        public int DocType { get; set; }
+        public string DocType { get; set; }
         public int ParentGroupId { get; set; }
         public int GroupId { get; set; }
         public string GroupName { get; set; }

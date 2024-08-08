@@ -18,7 +18,6 @@ namespace FileViewer
     {
         private MainMenu mainMenu;
         private OpenFileDialog openFileDialog;
-        private Dictionary<int, List<ElementContent>> _ds = null;
         private Dictionary<string, List<List<ElementContent>>> _lstTabContent = new Dictionary<string, List<List<ElementContent>>>();
         private int count = 1;
         //when using backgroundworker, if we want to access controls from UI, we must use delegate to get them
@@ -62,7 +61,6 @@ namespace FileViewer
                 {
                     try
                     {
-                        _ds = new Dictionary<int, List<ElementContent>>();
                         _parseContent(str, currGrid);
                         DisableDataGridViewSorting(currGrid);
                         tab.Controls.Add(currGrid);
@@ -603,7 +601,8 @@ namespace FileViewer
                     if (control.GetType() == typeof(DataGridView) && control.Visible)
                     {
                         var grid = (DataGridView)control;
-                        var ds = _lstTabContent[grid.Name];
+                        grid.UpdateCellValue(1,1);
+                       var ds = _lstTabContent[grid.Name];
                         var dta = grid.Rows;
                         string content = "";
                         for (var i = 0; i < dta.Count; i++)
@@ -781,8 +780,9 @@ namespace FileViewer
         public void AddNewTab(string tabName)
         {
             TabPage tab = new TabPage(tabName);
-            tab.Controls.Add(_initGrid((count++).ToString()));
+            tab.Controls.Add(_initGrid((count++).ToString()));           
             this.ctrlTabFileViewer.TabPages.Add(tab);
+            this.Focus();
         }
         private DataGridView _initGrid(string name)
         {
@@ -829,11 +829,11 @@ namespace FileViewer
             grid.KeyDown += new KeyEventHandler(Grid_KeyPress);
             grid.DragEnter += new DragEventHandler(Grid_DragEnter);
             grid.DragDrop += Grid_DragDrop;
-            grid.CellValueChanged += grid_CellValueChanged;
+            grid.CellValueChanged += grid_CellValueChanged;         
+           
             ((System.ComponentModel.ISupportInitialize)(grid)).EndInit();
             return grid;
         }
-
         private TextBox _initTextBox(string name)
         {
             var txtContent = new TextBox();
@@ -861,9 +861,8 @@ namespace FileViewer
             };
             txtContent.TextChangedEvent += LineNumberTextBox_TextChanged;
             txtContent.MouseDownEvent += LineNumberTextBox_MouseMove;
+            txtContent.KeyEvent += LineNumberTextBox_KeyDown;
             txtContent.MouseClick += LineNumberTextBox_MouseClick;
-            txtContent.KeyDown+= LineNumberTextBox_KeyDown;
-            txtContent.KeyUp += LineNumberTextBox_KeyUp;
             return txtContent;
         }
 
@@ -932,12 +931,13 @@ namespace FileViewer
                     try
                     {
                         var fileName = ((string[])e.Data.GetData(d))[0];
-                        _ds = new Dictionary<int, List<ElementContent>>();
 
                         grid = _initGrid((count++).ToString());
-                        tab = new TabPage(fileName.Substring(fileName.LastIndexOf('\\') + 1));
-                        tab.Padding = new System.Windows.Forms.Padding(0);
-                        tab.ToolTipText = fileName;
+                        tab = new TabPage(fileName.Substring(fileName.LastIndexOf('\\') + 1))
+                        {
+                            Padding = new System.Windows.Forms.Padding(0),
+                            ToolTipText = fileName                            
+                        };
                         tab.Controls.Add(grid);
                         ctrlTabFileViewer.TabPages.Add(tab);
                         ctrlTabFileViewer.SelectedTab = ctrlTabFileViewer.TabPages[ctrlTabFileViewer.TabCount - 1];
@@ -984,7 +984,6 @@ namespace FileViewer
             {
                 currGrid.Columns.Clear();
                 currGrid.Rows.Clear();
-                _ds = new Dictionary<int, List<ElementContent>>();
                 str = Clipboard.GetText();
                 if (str == string.Empty) return;
                 _parseContent(str, currGrid);
@@ -1186,6 +1185,7 @@ namespace FileViewer
                         currTextBox.Visible = true;
                         currTextBox.TextChangedEvent += LineNumberTextBox_TextChanged;
                         currTextBox.MouseDownEvent += LineNumberTextBox_MouseMove;
+                        currTextBox.KeyEvent += LineNumberTextBox_KeyDown;
                         currTextBox.MouseClick += LineNumberTextBox_MouseClick;
                     }
                 }
@@ -1274,20 +1274,24 @@ namespace FileViewer
 
         private void LineNumberTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            UpdateStatus((LineNumberTextBox)sender);
+            UpdateStatusKeyPress((LineNumberTextBox)sender);
         }
-
-        private void LineNumberTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            UpdateStatus((LineNumberTextBox)sender);
-        }
-
         private void UpdateStatus(LineNumberTextBox lineNumberTextBox)
         {
             int index = lineNumberTextBox.SelectionStart;
             int line = lineNumberTextBox.GetLineFromCharIndex(index);
             int column = index - lineNumberTextBox.GetFirstCharIndexFromLine(line);
             lineNumberTextBox.toolStripStatusLabel1.Text = $"Ln {line + 1}, Col {column + 1}";
+
+            int wordCount = lineNumberTextBox.Text.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            lineNumberTextBox.toolStripStatusLabel2.Text = $"Word Count: {wordCount}";
+        }
+        private void UpdateStatusKeyPress(LineNumberTextBox lineNumberTextBox)
+        {
+            int index = lineNumberTextBox.SelectionStart;
+            int line = lineNumberTextBox.GetLineFromCharIndex(index);
+            int column = index - lineNumberTextBox.GetFirstCharIndexFromLine(line);
+            lineNumberTextBox.toolStripStatusLabel1.Text = $"Ln {line + 1}, Col {column}";
 
             int wordCount = lineNumberTextBox.Text.Split(new[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
             lineNumberTextBox.toolStripStatusLabel2.Text = $"Word Count: {wordCount}";

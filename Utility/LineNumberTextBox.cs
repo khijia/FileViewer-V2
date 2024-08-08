@@ -16,6 +16,7 @@ namespace FileViewer.Utility
         public ToolStripStatusLabel toolStripStatusLabel3;
         public event EventHandler TextChangedEvent;
         public event MouseEventHandler MouseDownEvent;
+        public event KeyEventHandler KeyEvent;
 
         public LineNumberTextBox()
         {
@@ -51,6 +52,10 @@ namespace FileViewer.Utility
             _richTextBox.MouseClick += (sender, args) =>
             {
                 MouseDownEvent?.Invoke(this, args);
+            };
+            _richTextBox.KeyDown += (sender, args) =>
+            {
+                KeyEvent?.Invoke(this, args);
             };
             _richTextBox.Resize += (sender, args) => _lineNumberPanel.Invalidate();
 

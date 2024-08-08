@@ -116,7 +116,7 @@ namespace FileViewer.Forms
                 }
                 var document = new List<Document>() {new Document()            {
                 Id= int.Parse(txtDocId.Text),
-                DocType=int.Parse( txtDocType.Text),
+                DocType=txtDocType.Text,
                 Description= txtDesc.Text
             } };
 

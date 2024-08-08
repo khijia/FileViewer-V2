@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileViewer", "FileViewer.csproj", "{8565D599-1CA8-4D23-A985-A6DA687BF8EA}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{E4EE0C7C-62B8-49B7-BD68-80AD04A66C1E}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup.vdproj", "{7732A5FB-AC03-4104-B477-8333BC17098E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +29,18 @@ Global
 		{8565D599-1CA8-4D23-A985-A6DA687BF8EA}.Release|x64.Build.0 = Release|Any CPU
 		{8565D599-1CA8-4D23-A985-A6DA687BF8EA}.Release|x86.ActiveCfg = Release|Any CPU
 		{8565D599-1CA8-4D23-A985-A6DA687BF8EA}.Release|x86.Build.0 = Release|Any CPU
-		{E4EE0C7C-62B8-49B7-BD68-80AD04A66C1E}.Debug|Any CPU.ActiveCfg = Debug
-		{E4EE0C7C-62B8-49B7-BD68-80AD04A66C1E}.Debug|x64.ActiveCfg = Debug
-		{E4EE0C7C-62B8-49B7-BD68-80AD04A66C1E}.Debug|x86.ActiveCfg = Debug
-		{E4EE0C7C-62B8-49B7-BD68-80AD04A66C1E}.Release|Any CPU.ActiveCfg = Release
-		{E4EE0C7C-62B8-49B7-BD68-80AD04A66C1E}.Release|x64.ActiveCfg = Release
-		{E4EE0C7C-62B8-49B7-BD68-80AD04A66C1E}.Release|x86.ActiveCfg = Release
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Debug|Any CPU.ActiveCfg = Debug
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Debug|Any CPU.Build.0 = Debug
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Debug|x64.ActiveCfg = Debug
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Debug|x64.Build.0 = Debug
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Debug|x86.ActiveCfg = Debug
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Debug|x86.Build.0 = Debug
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Release|Any CPU.ActiveCfg = Release
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Release|Any CPU.Build.0 = Release
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Release|x64.ActiveCfg = Release
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Release|x64.Build.0 = Release
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Release|x86.ActiveCfg = Release
+		{7732A5FB-AC03-4104-B477-8333BC17098E}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
