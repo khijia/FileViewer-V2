@@ -492,4 +492,8 @@
     <WCFMetadataStorage Include="Connected Services\D3FOUploadService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if not exist "$(ProjectDir)Log" mkdir "$(ProjectDir)Log"
+echo Build completed at: $(date) $(time) &gt;&gt; "$(ProjectDir)Log\Log.txt"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

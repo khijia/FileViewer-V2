@@ -406,6 +406,7 @@ namespace FileViewer
         {
             try
             {
+
                 ReloadGridData((DataGridView)sender);
             }
             catch (Exception ex)
@@ -829,12 +830,18 @@ namespace FileViewer
             grid.KeyDown += new KeyEventHandler(Grid_KeyPress);
             grid.DragEnter += new DragEventHandler(Grid_DragEnter);
             grid.DragDrop += Grid_DragDrop;
-            grid.CellValueChanged += grid_CellValueChanged;         
-                  
+            grid.CellValueChanged += grid_CellValueChanged;
+            grid.CellLeave += Grid_CellLeave;       
            
             ((System.ComponentModel.ISupportInitialize)(grid)).EndInit();
             return grid;
         }
+
+        private void Grid_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         private TextBox _initTextBox(string name)
         {
             var txtContent = new TextBox();
