@@ -22,6 +22,7 @@ namespace FileViewer
         private int count = 1;
         //when using backgroundworker, if we want to access controls from UI, we must use delegate to get them
         delegate TabPage GetTabCallback();
+        private bool isChangingCell = false;
         public FileViewer()
         {
             InitializeComponent();
@@ -600,8 +601,7 @@ namespace FileViewer
                 {
                     if (control.GetType() == typeof(DataGridView) && control.Visible)
                     {
-                        var grid = (DataGridView)control;
-                        grid.UpdateCellValue(1,1);
+                        var grid = (DataGridView)control;                       
                        var ds = _lstTabContent[grid.Name];
                         var dta = grid.Rows;
                         string content = "";
@@ -830,6 +830,7 @@ namespace FileViewer
             grid.DragEnter += new DragEventHandler(Grid_DragEnter);
             grid.DragDrop += Grid_DragDrop;
             grid.CellValueChanged += grid_CellValueChanged;         
+                  
            
             ((System.ComponentModel.ISupportInitialize)(grid)).EndInit();
             return grid;
